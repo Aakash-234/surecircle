@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sure Circle - Peer-to-Peer Self-Insurance Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>Sure Circle</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#about" class="nav-link" data-page="about">About</a>
+                <a href="#pricing" class="nav-link" data-page="pricing">Pricing</a>
+                <div class="nav-auth">
+                    <button class="btn btn--outline btn--sm" id="login-btn">Login</button>
+                    <button class="btn btn--primary btn--sm" id="signup-btn">Sign Up</button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Navbar (shown when logged in) -->
+    <nav class="auth-navbar hidden" id="auth-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>Sure Circle</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">Dashboard</a>
+                <a href="#pools" class="nav-link" data-page="pools">Pools</a>
+                <a href="#claims" class="nav-link" data-page="claims">Claims</a>
+                <a href="#profile" class="nav-link" data-page="profile">Profile</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User" id="user-avatar">
+                </div>
+                <button class="btn btn--outline btn--sm" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section class="page active" id="home-page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                Reimagine Insurance with 
+                                <span class="text-gradient">Trusted Communities</span>
+                            </h1>
+                            <p class="hero-description">
+                                Join hands with friends, family, and colleagues to create transparent, cost-effective insurance pools. 
+                                Pay only when someone truly needs it. Get your money back when no claims are made.
+                            </p>
+                            <div class="hero-stats">
+                                <div class="stat">
+                                    <span class="stat-number">₹12.5L+</span>
+                                    <span class="stat-label">Claims Paid</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2,500+</span>
+                                    <span class="stat-label">Members</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">₹3,200</span>
+                                    <span class="stat-label">Avg. Savings</span>
+                                </div>
+                            </div>
+                            <div class="hero-actions">
+                                <button class="btn btn--primary btn--lg" id="get-started-btn">Get Started</button>
+                                <button class="btn btn--outline btn--lg" id="learn-more-btn">Learn More</button>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="trust-score-demo">
+                                <div class="trust-gauge">
+                                    <div class="gauge-container">
+                                        <svg class="gauge-svg" viewBox="0 0 200 120">
+                                            <path class="gauge-background" d="M 20 100 A 80 80 0 0 1 180 100"></path>
+                                            <path class="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" id="gauge-fill"></path>
+                                        </svg>
+                                        <div class="gauge-center">
+                                            <span class="gauge-score">785</span>
+                                            <span class="gauge-label">SureScore</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="demo-stats">
+                                    <div class="demo-stat">
+                                        <i class="fas fa-users"></i>
+                                        <span>12 Pool Members</span>
+                                    </div>
+                                    <div class="demo-stat">
+                                        <i class="fas fa-rupee-sign"></i>
+                                        <span>₹500/month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works">
+                <div class="container">
+                    <h2 class="section-title">How Sure Circle Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Create or Join a Pool</h3>
+                            <p>Form trusted groups with friends, family, or colleagues. Set monthly contributions and coverage rules together.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3>Pool Funds Monthly</h3>
+                            <p>Everyone contributes a fixed amount monthly. Funds are securely stored and transparently managed.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-vote-yea"></i>
+                            </div>
+                            <h3>Vote on Claims</h3>
+                            <p>When someone files a claim, the group votes democratically. Transparent process ensures fair decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison -->
+            <section class="comparison">
+                <div class="container">
+                    <h2 class="section-title">Traditional Insurance vs Sure Circle</h2>
+                    <div class="comparison-table">
+                        <div class="comparison-column">
+                            <h3>Traditional Insurance</h3>
+                            <div class="comparison-item">
+                                <i class="fas fa-times text-error"></i>
+                                <span>₹600 claims, ₹400 overhead per ₹1000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-times text-error"></i>
+                                <span>No money back if no claims</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-times text-error"></i>
+                                <span>Complex claim processes</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-times text-error"></i>
+                                <span>No transparency in decisions</span>
+                            </div>
+                        </div>
+                        <div class="comparison-column highlight">
+                            <h3>Sure Circle</h3>
+                            <div class="comparison-item">
+                                <i class="fas fa-check text-success"></i>
+                                <span>₹950+ goes to actual coverage per ₹1000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-check text-success"></i>
+                                <span>Get money back when no claims</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-check text-success"></i>
+                                <span>Simple, fast claim approval</span>
+                            </div>
+                            <div class="comparison-item">
+                                <i class="fas fa-check text-success"></i>
+                                <span>Transparent democratic voting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <div class="container">
+                    <h2 class="section-title">What Our Members Say</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Sure Circle saved me ₹8,000 in just 6 months compared to traditional insurance. The transparent voting system gives me confidence that my claims will be handled fairly."</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" alt="Rahul">
+                                <div>
+                                    <strong>Rahul Krishnan</strong>
+                                    <span>Software Engineer, Bangalore</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"As a student, traditional insurance was too expensive. Our hostel group pools just ₹200/month and we've already helped 3 friends repair their laptops!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face" alt="Sneha">
+                                <div>
+                                    <strong>Sneha Verma</strong>
+                                    <span>Student, Delhi University</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Ready to Start Your Insurance Revolution?</h2>
+                        <p>Join thousands of Indians who are saving money and building trust through peer-to-peer insurance.</p>
+                        <button class="btn btn--primary btn--lg" id="join-now-btn">Join Now</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section class="page" id="dashboard-page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, <span id="user-name">Arjun</span>!</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- Trust Score Card -->
+                    <div class="dashboard-card trust-score-card">
+                        <h3>Your SureScore</h3>
+                        <div class="trust-score-display">
+                            <div class="score-gauge">
+                                <div class="gauge-container">
+                                    <svg class="gauge-svg" viewBox="0 0 200 120">
+                                        <path class="gauge-background" d="M 20 100 A 80 80 0 0 1 180 100"></path>
+                                        <path class="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" id="dashboard-gauge"></path>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <span class="gauge-score" id="user-trust-score">785</span>
+                                        <span class="gauge-label">Excellent</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="score-factors">
+                                <div class="factor">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>On-time Contributions: 100%</span>
+                                </div>
+                                <div class="factor">
+                                    <i class="fas fa-vote-yea"></i>
+                                    <span>Voting Participation: 12/12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="dashboard-card stats-card">
+                        <h3>Quick Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">₹15,000</span>
+                                <span class="stat-label">Total Contributed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Active Pools</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Claims Filed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">₹500</span>
+                                <span class="stat-label">Monthly Contribution</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Pools -->
+                    <div class="dashboard-card pools-card">
+                        <div class="card-header">
+                            <h3>Your Pools</h3>
+                            <button class="btn btn--outline btn--sm" data-page="pools">View All</button>
+                        </div>
+                        <div class="pools-list">
+                            <div class="pool-item">
+                                <div class="pool-info">
+                                    <h4>Tech Professionals Mobile Insurance</h4>
+                                    <p>12/15 members • ₹84,000 pooled</p>
+                                </div>
+                                <div class="pool-status">
+                                    <span class="status status--success">Active</span>
+                                </div>
+                            </div>
+                            <div class="pool-item">
+                                <div class="pool-info">
+                                    <h4>College Hostel Gadget Protection</h4>
+                                    <p>8/20 members • ₹28,800 pooled</p>
+                                </div>
+                                <div class="pool-status">
+                                    <span class="status status--info">Recruiting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card activity-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <i class="fas fa-rupee-sign activity-icon contribution"></i>
+                                <div class="activity-details">
+                                    <span class="activity-title">Monthly contribution paid</span>
+                                    <span class="activity-time">2 days ago</span>
+                                </div>
+                                <span class="activity-amount">-₹500</span>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-vote-yea activity-icon vote"></i>
+                                <div class="activity-details">
+                                    <span class="activity-title">Voted on Priya's claim</span>
+                                    <span class="activity-time">1 week ago</span>
+                                </div>
+                                <span class="activity-status">Approved</span>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-hand-holding-usd activity-icon refund"></i>
+                                <div class="activity-details">
+                                    <span class="activity-title">Unused funds refund</span>
+                                    <span class="activity-time">2 weeks ago</span>
+                                </div>
+                                <span class="activity-amount">+₹120</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card actions-card">
+                        <h3>Quick Actions</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" data-page="pools" data-action="create">
+                                <i class="fas fa-plus"></i>
+                                <span>Create Pool</span>
+                            </button>
+                            <button class="action-btn" data-page="pools" data-action="join">
+                                <i class="fas fa-users"></i>
+                                <span>Join Pool</span>
+                            </button>
+                            <button class="action-btn" data-page="claims" data-action="file">
+                                <i class="fas fa-file-alt"></i>
+                                <span>File Claim</span>
+                            </button>
+                            <button class="action-btn" data-page="claims" data-action="vote">
+                                <i class="fas fa-vote-yea"></i>
+                                <span>Vote on Claims</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pools Page -->
+        <section class="page" id="pools-page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Insurance Pools</h1>
+                    <div class="page-actions">
+                        <button class="btn btn--primary" id="create-pool-btn">Create New Pool</button>
+                        <button class="btn btn--outline" id="browse-pools-btn">Browse Pools</button>
+                    </div>
+                </div>
+
+                <!-- Pool Tabs -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="my-pools">My Pools</button>
+                    <button class="tab" data-tab="available-pools">Available Pools</button>
+                    <button class="tab" data-tab="create-pool">Create Pool</button>
+                </div>
+
+                <!-- My Pools Tab -->
+                <div class="tab-content active" id="my-pools">
+                    <div class="pools-grid">
+                        <div class="pool-card">
+                            <div class="pool-header">
+                                <h3>Tech Professionals Mobile Insurance</h3>
+                                <span class="status status--success">Active</span>
+                            </div>
+                            <div class="pool-body">
+                                <p>Insurance for smartphones, laptops, and tablets for IT professionals</p>
+                                <div class="pool-stats">
+                                    <div class="pool-stat">
+                                        <span class="stat-value">12/15</span>
+                                        <span class="stat-label">Members</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹500</span>
+                                        <span class="stat-label">Monthly</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹84,000</span>
+                                        <span class="stat-label">Total Pool</span>
+                                    </div>
+                                </div>
+                                <div class="pool-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span>80% of target reached</span>
+                                </div>
+                            </div>
+                            <div class="pool-footer">
+                                <button class="btn btn--outline btn--sm">View Details</button>
+                                <button class="btn btn--secondary btn--sm">Manage</button>
+                            </div>
+                        </div>
+
+                        <div class="pool-card">
+                            <div class="pool-header">
+                                <h3>College Hostel Gadget Protection</h3>
+                                <span class="status status--info">Recruiting</span>
+                            </div>
+                            <div class="pool-body">
+                                <p>Comprehensive protection for laptops, phones, and other electronics</p>
+                                <div class="pool-stats">
+                                    <div class="pool-stat">
+                                        <span class="stat-value">8/20</span>
+                                        <span class="stat-label">Members</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹300</span>
+                                        <span class="stat-label">Monthly</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹28,800</span>
+                                        <span class="stat-label">Total Pool</span>
+                                    </div>
+                                </div>
+                                <div class="pool-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <span>40% of target reached</span>
+                                </div>
+                            </div>
+                            <div class="pool-footer">
+                                <button class="btn btn--outline btn--sm">View Details</button>
+                                <button class="btn btn--secondary btn--sm">Invite Members</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Pools Tab -->
+                <div class="tab-content" id="available-pools">
+                    <div class="search-filters">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search pools..." class="form-control">
+                        </div>
+                        <div class="filters">
+                            <select class="form-control">
+                                <option>All Categories</option>
+                                <option>Electronics</option>
+                                <option>Vehicle</option>
+                                <option>Travel</option>
+                            </select>
+                            <select class="form-control">
+                                <option>All Contributions</option>
+                                <option>₹0 - ₹300</option>
+                                <option>₹300 - ₹1000</option>
+                                <option>₹1000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="pools-grid">
+                        <div class="pool-card">
+                            <div class="pool-header">
+                                <h3>Bangalore Bike Insurance Group</h3>
+                                <span class="status status--info">Open</span>
+                            </div>
+                            <div class="pool-body">
+                                <p>Two-wheeler insurance for daily commuters in Bangalore</p>
+                                <div class="pool-stats">
+                                    <div class="pool-stat">
+                                        <span class="stat-value">15/20</span>
+                                        <span class="stat-label">Members</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹800</span>
+                                        <span class="stat-label">Monthly</span>
+                                    </div>
+                                    <div class="pool-stat">
+                                        <span class="stat-value">₹1,20,000</span>
+                                        <span class="stat-label">Coverage</span>
+                                    </div>
+                                </div>
+                                <div class="pool-features">
+                                    <span class="feature-tag">Accident Coverage</span>
+                                    <span class="feature-tag">Theft Protection</span>
+                                    <span class="feature-tag">Third Party</span>
+                                </div>
+                            </div>
+                            <div class="pool-footer">
+                                <button class="btn btn--outline btn--sm">View Details</button>
+                                <button class="btn btn--primary btn--sm">Join Pool</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Create Pool Tab -->
+                <div class="tab-content" id="create-pool">
+                    <div class="create-pool-form">
+                        <h3>Create a New Insurance Pool</h3>
+                        <form id="pool-creation-form">
+                            <div class="form-group">
+                                <label class="form-label">Pool Name</label>
+                                <input type="text" class="form-control" placeholder="e.g., Friends Mobile Insurance Group" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" rows="3" placeholder="Describe what this pool covers and who it's for..." required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Category</label>
+                                    <select class="form-control" required>
+                                        <option value="">Select Category</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="vehicle">Vehicle</option>
+                                        <option value="travel">Travel</option>
+                                        <option value="appliances">Appliances</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Maximum Members</label>
+                                    <input type="number" class="form-control" min="3" max="50" value="10" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Monthly Contribution (₹)</label>
+                                    <input type="number" class="form-control" min="100" max="5000" placeholder="500" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Coverage Limit (₹)</label>
+                                    <input type="number" class="form-control" min="10000" max="500000" placeholder="50000" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Governance Model</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="governance" value="majority_vote" checked>
+                                        <span class="radio-label">Majority Vote (Simple Democracy)</span>
+                                        <small>Claims approved by majority of members</small>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="governance" value="super_majority">
+                                        <span class="radio-label">Super Majority (2/3 Vote)</span>
+                                        <small>Claims need 67% approval</small>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="governance" value="expert_review">
+                                        <span class="radio-label">Expert Review</span>
+                                        <small>External expert reviews claims</small>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Minimum Trust Score</label>
+                                <input type="range" min="500" max="900" value="700" class="trust-slider" id="trust-slider">
+                                <div class="slider-value">
+                                    <span id="trust-value">700</span>
+                                    <small>Members need this minimum trust score to join</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn--outline">Save as Draft</button>
+                                <button type="submit" class="btn btn--primary">Create Pool</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Claims Page -->
+        <section class="page" id="claims-page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Claims Management</h1>
+                    <button class="btn btn--primary" id="file-claim-btn">File New Claim</button>
+                </div>
+
+                <!-- Claims Tabs -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="pending-votes">Pending Votes</button>
+                    <button class="tab" data-tab="my-claims">My Claims</button>
+                    <button class="tab" data-tab="all-claims">All Claims</button>
+                    <button class="tab" data-tab="file-claim">File Claim</button>
+                </div>
+
+                <!-- Pending Votes Tab -->
+                <div class="tab-content active" id="pending-votes">
+                    <div class="claims-list">
+                        <div class="claim-card voting">
+                            <div class="claim-header">
+                                <div class="claim-info">
+                                    <h3>Smartphone Screen Damage</h3>
+                                    <p>Submitted by <strong>Arjun Patel</strong> • Tech Professionals Pool</p>
+                                </div>
+                                <div class="claim-amount">₹12,000</div>
+                            </div>
+                            <div class="claim-body">
+                                <p>My iPhone 14 screen got cracked when it fell from my pocket while getting out of an auto-rickshaw. Attaching repair quote from authorized service center.</p>
+                                <div class="claim-evidence">
+                                    <div class="evidence-item">
+                                        <i class="fas fa-image"></i>
+                                        <span>damage_photo.jpg</span>
+                                    </div>
+                                    <div class="evidence-item">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>repair_quote.pdf</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="claim-voting">
+                                <div class="voting-stats">
+                                    <div class="vote-count">
+                                        <span class="votes-for">8 For</span>
+                                        <span class="votes-against">2 Against</span>
+                                        <span class="votes-needed">Need 8 total votes</span>
+                                    </div>
+                                    <div class="vote-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill success" style="width: 80%"></div>
+                                            <div class="progress-fill error" style="width: 20%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vote-actions">
+                                    <button class="btn btn--success vote-btn" data-vote="approve">
+                                        <i class="fas fa-thumbs-up"></i>
+                                        Approve
+                                    </button>
+                                    <button class="btn btn--error vote-btn" data-vote="reject">
+                                        <i class="fas fa-thumbs-down"></i>
+                                        Reject
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="claim-footer">
+                                <span class="claim-date">Submitted on June 25, 2024</span>
+                                <span class="claim-deadline">Voting ends in 2 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Claims Tab -->
+                <div class="tab-content" id="my-claims">
+                    <div class="claims-list">
+                        <div class="claim-card">
+                            <div class="claim-header">
+                                <div class="claim-info">
+                                    <h3>Smartphone Screen Damage</h3>
+                                    <p>Tech Professionals Pool</p>
+                                </div>
+                                <div class="claim-status">
+                                    <span class="status status--warning">Voting</span>
+                                    <span class="claim-amount">₹12,000</span>
+                                </div>
+                            </div>
+                            <div class="claim-body">
+                                <p>iPhone 14 screen damage due to accidental drop</p>
+                                <div class="claim-progress">
+                                    <div class="progress-info">
+                                        <span>8 of 10 members voted</span>
+                                        <span>80% approval rate</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="claim-footer">
+                                <span class="claim-date">June 25, 2024</span>
+                                <button class="btn btn--outline btn--sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Claim Tab -->
+                <div class="tab-content" id="file-claim">
+                    <div class="file-claim-form">
+                        <h3>File a New Claim</h3>
+                        <form id="claim-form">
+                            <div class="form-group">
+                                <label class="form-label">Select Pool</label>
+                                <select class="form-control" name="pool" required>
+                                    <option value="">Choose a pool...</option>
+                                    <option value="1">Tech Professionals Mobile Insurance</option>
+                                    <option value="2">College Hostel Gadget Protection</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Claim Title</label>
+                                <input type="text" class="form-control" name="title" placeholder="Brief description of the incident" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Claim Amount (₹)</label>
+                                <input type="number" class="form-control" name="amount" min="1" max="100000" placeholder="12000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Category</label>
+                                <select class="form-control" name="category" required>
+                                    <option value="">Select category...</option>
+                                    <option value="accidental_damage">Accidental Damage</option>
+                                    <option value="theft">Theft</option>
+                                    <option value="water_damage">Water Damage</option>
+                                    <option value="fire_damage">Fire Damage</option>
+                                    <option value="manufacturing_defect">Manufacturing Defect</option>
+                                    <option value="natural_disaster">Natural Disaster</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Detailed Description</label>
+                                <textarea class="form-control" name="description" rows="4" placeholder="Describe what happened, when, and where. Be as detailed as possible to help your pool members understand the situation." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Supporting Evidence</label>
+                                <div class="file-upload" id="file-upload-area">
+                                    <div class="upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag and drop files here or <span>browse</span></p>
+                                        <small>Upload photos, receipts, quotes, or other supporting documents (Max 5 files, 10MB each)</small>
+                                    </div>
+                                    <input type="file" id="file-input" multiple accept="image/*,.pdf,.doc,.docx" style="display: none;">
+                                    <div class="uploaded-files" id="uploaded-files"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label checkbox-label">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I confirm that all information provided is accurate and I have supporting evidence for this claim
+                                </label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn--outline" id="save-draft-btn">Save as Draft</button>
+                                <button type="submit" class="btn btn--primary" id="submit-claim-btn">Submit Claim</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section class="page" id="profile-page">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Profile" id="profile-avatar">
+                        <button class="avatar-edit">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="profile-name">Arjun Patel</h1>
+                        <p id="profile-email">arjun.patel@email.com</p>
+                        <div class="profile-badges">
+                            <span class="badge verified">
+                                <i class="fas fa-check-circle"></i>
+                                Verified Member
+                            </span>
+                            <span class="badge">
+                                <i class="fas fa-calendar"></i>
+                                Member since March 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Trust Score Section -->
+                    <div class="profile-section">
+                        <h2>SureScore Analysis</h2>
+                        <div class="trust-analysis">
+                            <div class="trust-score-detailed">
+                                <div class="score-gauge">
+                                    <div class="gauge-container">
+                                        <svg class="gauge-svg" viewBox="0 0 200 120">
+                                            <path class="gauge-background" d="M 20 100 A 80 80 0 0 1 180 100"></path>
+                                            <path class="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" id="profile-gauge"></path>
+                                        </svg>
+                                        <div class="gauge-center">
+                                            <span class="gauge-score">785</span>
+                                            <span class="gauge-label">Excellent</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="score-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Payment History</span>
+                                        <div class="breakdown-bar">
+                                            <div class="breakdown-fill" style="width: 100%"></div>
+                                        </div>
+                                        <span class="breakdown-score">100%</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Voting Participation</span>
+                                        <div class="breakdown-bar">
+                                            <div class="breakdown-fill" style="width: 95%"></div>
+                                        </div>
+                                        <span class="breakdown-score">95%</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Community Engagement</span>
+                                        <div class="breakdown-bar">
+                                            <div class="breakdown-fill" style="width: 85%"></div>
+                                        </div>
+                                        <span class="breakdown-score">85%</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label">Claim History</span>
+                                        <div class="breakdown-bar">
+                                            <div class="breakdown-fill" style="width: 90%"></div>
+                                        </div>
+                                        <span class="breakdown-score">90%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="profile-section">
+                        <h2>Personal Information</h2>
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" value="Arjun Patel">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="arjun.patel@email.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" value="+91 98765 43210">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" value="1995-08-15">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <textarea class="form-control" rows="2">Whitefield, Bangalore, Karnataka, India</textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Update Information</button>
+                        </form>
+                    </div>
+
+                    <!-- Transaction History -->
+                    <div class="profile-section">
+                        <h2>Transaction History</h2>
+                        <div class="transaction-list">
+                            <div class="transaction-item">
+                                <div class="transaction-icon contribution">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <span class="transaction-title">Monthly Contribution</span>
+                                    <span class="transaction-description">Tech Professionals Pool</span>
+                                    <span class="transaction-date">June 1, 2024</span>
+                                </div>
+                                <span class="transaction-amount debit">-₹500</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-icon refund">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <span class="transaction-title">Unused Funds Refund</span>
+                                    <span class="transaction-description">College Hostel Pool</span>
+                                    <span class="transaction-date">May 31, 2024</span>
+                                </div>
+                                <span class="transaction-amount credit">+₹120</span>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-icon contribution">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <span class="transaction-title">Monthly Contribution</span>
+                                    <span class="transaction-description">Tech Professionals Pool</span>
+                                    <span class="transaction-date">May 1, 2024</span>
+                                </div>
+                                <span class="transaction-amount debit">-₹500</span>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline">View All Transactions</button>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="profile-section">
+                        <h2>Security Settings</h2>
+                        <div class="security-options">
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <button class="btn btn--primary btn--sm">Enable</button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Change Password</h4>
+                                    <p>Update your account password</p>
+                                </div>
+                                <button class="btn btn--outline btn--sm">Change</button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Login Notifications</h4>
+                                    <p>Get notified when someone logs into your account</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section class="page" id="about-page">
+            <div class="container">
+                <div class="about-hero">
+                    <h1>About Sure Circle</h1>
+                    <p class="about-subtitle">Reimagining insurance through trusted communities and transparent technology</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-section">
+                        <h2>Our Story</h2>
+                        <p>Sure Circle was born from a simple frustration: paying ₹18,000 in smartphone insurance premiums over 18 months without ever filing a claim. That money was gone forever, lost to overheads and administrative costs, with no return for the policyholder.</p>
+                        <p>We asked ourselves: What if there was a better way? What if people could pool resources with those they trust, only paying when someone genuinely needs help, and getting their money back when no claims are made?</p>
+                        <p>That's how Sure Circle came to life - as India's first tech-enabled peer-to-peer self-insurance platform, built for the digital generation that values transparency, community, and smart financial decisions.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>How We're Different</h2>
+                        <div class="differences-grid">
+                            <div class="difference-item">
+                                <i class="fas fa-users"></i>
+                                <h3>Community-Driven</h3>
+                                <p>Insurance pools formed by people who trust each other - friends, family, colleagues, or communities with shared interests.</p>
+                            </div>
+                            <div class="difference-item">
+                                <i class="fas fa-eye"></i>
+                                <h3>Fully Transparent</h3>
+                                <p>Every contribution, claim, and vote is visible to pool members. No hidden fees, no complex terms, no surprise rejections.</p>
+                            </div>
+                            <div class="difference-item">
+                                <i class="fas fa-coins"></i>
+                                <h3>Money Back</h3>
+                                <p>Unlike traditional insurance, unused funds are returned to members. You're not just paying premiums - you're building community wealth.</p>
+                            </div>
+                            <div class="difference-item">
+                                <i class="fas fa-vote-yea"></i>
+                                <h3>Democratic Decisions</h3>
+                                <p>Claims are decided by the community through transparent voting, with multiple governance models to choose from.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Our Technology Moats</h2>
+                        <div class="moats-grid">
+                            <div class="moat-item">
+                                <div class="moat-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h3>Behavioral & Trust Graph</h3>
+                                <p>We're building India's largest risk-behavior database outside traditional insurers. Our proprietary SureScore system analyzes claims history, voting patterns, and community engagement to create trust profiles that power micro-insurance across platforms.</p>
+                            </div>
+                            <div class="moat-item">
+                                <div class="moat-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Sticky Communities</h3>
+                                <p>Self-organized groups create strong social bonds that are hard to replicate. With in-group features, voting leaderboards, and longevity benefits, we're building the social glue of modern digital insurance.</p>
+                            </div>
+                            <div class="moat-item">
+                                <div class="moat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Float Optimization Engine</h3>
+                                <p>Our automated, RBI-compliant float management system optimizes returns on pooled funds through smart allocation in FDs, liquid funds, and approved instruments, creating the best risk-adjusted treasury layer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Regulatory Compliance</h2>
+                        <div class="compliance-info">
+                            <p>Sure Circle operates within India's regulatory framework as a technology platform facilitating peer-to-peer financial pooling. We work closely with legal experts to ensure compliance with:</p>
+                            <ul>
+                                <li>Reserve Bank of India (RBI) guidelines for financial services</li>
+                                <li>Insurance Regulatory and Development Authority of India (IRDAI) regulations</li>
+                                <li>Data protection and privacy laws</li>
+                                <li>Financial transaction and reporting requirements</li>
+                            </ul>
+                            <p class="compliance-note">
+                                <strong>Important:</strong> Sure Circle facilitates community-based risk pooling and is not a licensed insurance company. Payouts are subject to community decisions and pool availability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Our Mission</h2>
+                        <div class="mission-statement">
+                            <blockquote>
+                                "To democratize insurance in India by empowering communities to protect each other through transparency, technology, and trust."
+                            </blockquote>
+                            <p>We're not just building an insurance alternative - we're creating a movement towards community-driven financial protection that puts people first, eliminates unnecessary overhead, and rewards responsible behavior.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Page -->
+        <section class="page" id="pricing-page">
+            <div class="container">
+                <div class="pricing-hero">
+                    <h1>Simple, Transparent Pricing</h1>
+                    <p>No hidden fees, no complex terms. Just honest pricing that puts your community first.</p>
+                </div>
+
+                <div class="pricing-comparison">
+                    <h2>Traditional Insurance vs Sure Circle</h2>
+                    <div class="comparison-cards">
+                        <div class="comparison-card">
+                            <h3>Traditional Insurance</h3>
+                            <div class="price-breakdown">
+                                <div class="breakdown-item">
+                                    <span>Premium Paid</span>
+                                    <span>₹1,000</span>
+                                </div>
+                                <div class="breakdown-item negative">
+                                    <span>Actual Claims</span>
+                                    <span>₹600</span>
+                                </div>
+                                <div class="breakdown-item negative">
+                                    <span>Agent Commission</span>
+                                    <span>₹150</span>
+                                </div>
+                                <div class="breakdown-item negative">
+                                    <span>Admin Overhead</span>
+                                    <span>₹150</span>
+                                </div>
+                                <div class="breakdown-item negative">
+                                    <span>Company Profit</span>
+                                    <span>₹100</span>
+                                </div>
+                                <div class="breakdown-total negative">
+                                    <span>Your Benefit</span>
+                                    <span>₹0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-card highlight">
+                            <h3>Sure Circle</h3>
+                            <div class="price-breakdown">
+                                <div class="breakdown-item">
+                                    <span>Monthly Contribution</span>
+                                    <span>₹1,000</span>
+                                </div>
+                                <div class="breakdown-item positive">
+                                    <span>Pool for Claims</span>
+                                    <span>₹950</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Platform Fee (5%)</span>
+                                    <span>₹50</span>
+                                </div>
+                                <div class="breakdown-item positive">
+                                    <span>Refund if No Claims</span>
+                                    <span>₹950*</span>
+                                </div>
+                                <div class="breakdown-total positive">
+                                    <span>Your Benefit</span>
+                                    <span>Up to ₹950</span>
+                                </div>
+                            </div>
+                            <p class="breakdown-note">*Minus any approved claims in your pool</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-tiers">
+                    <h2>Platform Fees</h2>
+                    <div class="tiers-grid">
+                        <div class="tier-card">
+                            <h3>Basic Pools</h3>
+                            <div class="tier-price">
+                                <span class="price-number">5%</span>
+                                <span class="price-unit">of contributions</span>
+                            </div>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i>Up to 15 members</li>
+                                <li><i class="fas fa-check"></i>Basic governance (majority vote)</li>
+                                <li><i class="fas fa-check"></i>Monthly fund returns</li>
+                                <li><i class="fas fa-check"></i>Mobile app access</li>
+                                <li><i class="fas fa-check"></i>Basic support</li>
+                            </ul>
+                            <button class="btn btn--outline btn--full-width">Most Popular</button>
+                        </div>
+
+                        <div class="tier-card premium">
+                            <div class="tier-badge">Recommended</div>
+                            <h3>Premium Pools</h3>
+                            <div class="tier-price">
+                                <span class="price-number">3%</span>
+                                <span class="price-unit">of contributions</span>
+                            </div>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i>Up to 50 members</li>
+                                <li><i class="fas fa-check"></i>Advanced governance options</li>
+                                <li><i class="fas fa-check"></i>Expert claim reviews</li>
+                                <li><i class="fas fa-check"></i>Float optimization</li>
+                                <li><i class="fas fa-check"></i>Priority support</li>
+                                <li><i class="fas fa-check"></i>Custom pool features</li>
+                            </ul>
+                            <button class="btn btn--primary btn--full-width">Best Value</button>
+                        </div>
+
+                        <div class="tier-card">
+                            <h3>Enterprise Pools</h3>
+                            <div class="tier-price">
+                                <span class="price-number">2%</span>
+                                <span class="price-unit">of contributions</span>
+                            </div>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i>Unlimited members</li>
+                                <li><i class="fas fa-check"></i>Custom governance models</li>
+                                <li><i class="fas fa-check"></i>Dedicated account manager</li>
+                                <li><i class="fas fa-check"></i>API integrations</li>
+                                <li><i class="fas fa-check"></i>Advanced analytics</li>
+                                <li><i class="fas fa-check"></i>White-label options</li>
+                            </ul>
+                            <button class="btn btn--outline btn--full-width">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-faq">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do platform fees work?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our platform fee is deducted from each monthly contribution before it goes into your pool. This covers technology costs, security, compliance, and support. Unlike traditional insurance, this is our only fee - no hidden charges.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What happens to unused funds?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Unused funds are returned to pool members proportionally. If your pool collects ₹10,000 in a month and pays out ₹3,000 in claims, the remaining ₹7,000 is distributed back to members based on their contributions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Are there any setup costs?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No setup costs! Creating or joining a pool is completely free. You only pay the platform fee on your monthly contributions.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I change my pool tier later?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes! Pool administrators can upgrade their tier at any time. The new fee structure applies from the next billing cycle. Downgrades require all pool members to vote and approve the change.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-cta">
+                    <h2>Ready to Start Saving?</h2>
+                    <p>Join thousands of Indians who are revolutionizing insurance through trusted communities.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn--primary btn--lg">Create Your Pool</button>
+                        <button class="btn btn--outline btn--lg">Browse Existing Pools</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to Sure Circle</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email or Phone</label>
+                    <input type="text" class="form-control" placeholder="Enter your email or phone number" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label checkbox-label">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                <div class="auth-links">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Join Sure Circle</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form class="auth-form" id="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Create a strong password" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                <div class="auth-links">
+                    <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="success-title">Success!</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p id="success-message">Your action was completed successfully.</p>
+                <button class="btn btn--primary" id="success-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
